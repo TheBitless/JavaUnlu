@@ -3,6 +3,6 @@ public class Test {
         DoubleLinkNode a = new  DoubleLinkNode(2);
         System.out.println(a.getSiguiente());
         a.setSiguiente(a);
-
+        a.setSiguiente(a);
     }
 }

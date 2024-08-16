@@ -1,19 +1,19 @@
-public class SingleLinkList{
-    private SingleLinkNode inicio;
+public class LinkList {
+    private LinkNode inicio;
 
     private int cantidadElementos;
 
-    public SingleLinkList() {
+    public LinkList() {
         this.cantidadElementos = 0;
     }
 
     public void agregar(int valor){
-        SingleLinkNode nuevoNodo = new SingleLinkNode(valor);
+        LinkNode nuevoNodo = new LinkNode(valor);
         if(this.estaVacia()){
             this.inicio = nuevoNodo;
             this.cantidadElementos++;
         }else{
-            SingleLinkNode nodoActual = this.inicio;
+            LinkNode nodoActual = this.inicio;
             while (nodoActual.isEqual(valor) || !nodoActual.hasSiguiente()){
                 nodoActual = nodoActual.getSiguiente();
             }
@@ -41,7 +41,7 @@ public class SingleLinkList{
             this.cantidadElementos--;
         }
         else{
-            SingleLinkNode nodoActual = this.inicio;
+            LinkNode nodoActual = this.inicio;
             boolean centinel = true;
             while (nodoActual.hasSiguiente() && centinel){
                 if (nodoActual.getSiguiente().isEqual(valor)){
@@ -64,8 +64,8 @@ public class SingleLinkList{
     /**
      * Retorna el nodo del indice indicado !=
      */
-    private SingleLinkNode nodoOf(int index) {
-        SingleLinkNode actual = inicio;
+    private LinkNode nodoOf(int index) {
+        LinkNode actual = inicio;
         for (int i = 0; i < index - 1; i++) {
             if (!actual.hasSiguiente()){
                 throw  new ArrayIndexOutOfBoundsException("no existe el indice");
@@ -80,13 +80,13 @@ public class SingleLinkList{
             agregar(valor);
         }
         else if (index == 1){
-            inicio = new SingleLinkNode(valor);
+            inicio = new LinkNode(valor);
             this.cantidadElementos++;
         }
         else{
-            SingleLinkNode actual = nodoOf(index - 1);
-            SingleLinkNode aux = actual.getSiguiente();
-            actual.setSiguiente(new SingleLinkNode(valor));
+            LinkNode actual = nodoOf(index - 1);
+            LinkNode aux = actual.getSiguiente();
+            actual.setSiguiente(new LinkNode(valor));
             actual.getSiguiente().setSiguiente(aux);
             this.cantidadElementos++;
         }
@@ -97,7 +97,7 @@ public class SingleLinkList{
             return false;
         }
         boolean centinel = true;
-        SingleLinkNode nodoActual = inicio;
+        LinkNode nodoActual = inicio;
         while (nodoActual.hasSiguiente() && centinel){
             if (nodoActual.isEqual(valor)){
                 centinel = false;

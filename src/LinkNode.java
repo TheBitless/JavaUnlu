@@ -1,12 +1,12 @@
-public class SingleLinkNode{
+public class LinkNode {
     /**
      * Nodo siguiente a este nodo
      */
-    private SingleLinkNode siguiente;
+    private LinkNode siguiente;
 
     private final int valor;
 
-    public SingleLinkNode(int valor) {
+    public LinkNode(int valor) {
         this.valor = valor;
     }
 
@@ -14,7 +14,7 @@ public class SingleLinkNode{
         return this.valor;
     }
 
-    public void setSiguiente(SingleLinkNode nodo){
+    public void setSiguiente(LinkNode nodo){
         this.siguiente = nodo;
     }
 
@@ -22,7 +22,7 @@ public class SingleLinkNode{
         return this.siguiente != null;
     }
 
-    public SingleLinkNode getSiguiente() {
+    public LinkNode getSiguiente() {
         return this.siguiente;
     }
 

@@ -1,5 +1,5 @@
 public class Pila {
-    private SingleLinkNode tope;
+    private LinkNode tope;
     private int cantidad;
 
     public Pila(){
@@ -9,17 +9,16 @@ public class Pila {
 
     public void apilar(int valor){
         if (this.tope == null){
-            this.tope = new SingleLinkNode(valor);
-            this.cantidad++;
+            this.tope = new LinkNode(valor);
         }
         else{
-            getLastNodo().setSiguiente(new SingleLinkNode(valor));
-            this.cantidad++;
+            getLastNodo().setSiguiente(new LinkNode(valor));
         }
+        this.cantidad++;
     }
 
-    private SingleLinkNode getLastNodo() {
-        SingleLinkNode actual = tope;
+    private LinkNode getLastNodo() {
+        LinkNode actual = tope;
         while (actual.hasSiguiente()){
             actual = actual.getSiguiente();
         }
