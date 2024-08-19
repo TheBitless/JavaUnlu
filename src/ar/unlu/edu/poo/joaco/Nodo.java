@@ -1,20 +1,24 @@
-public class LinkNode {
+package ar.unlu.edu.poo.joaco;
+
+public class Nodo {
+
     /**
      * Nodo siguiente a este nodo
      */
-    private LinkNode siguiente;
+    private Nodo siguiente;
 
     private final int valor;
 
-    public LinkNode(int valor) {
+    public Nodo(int valor) {
         this.valor = valor;
+        ;
     }
 
     public int getValor() {
         return this.valor;
     }
 
-    public void setSiguiente(LinkNode nodo){
+    public void setSiguiente(Nodo nodo){
         this.siguiente = nodo;
     }
 
@@ -22,12 +26,13 @@ public class LinkNode {
         return this.siguiente != null;
     }
 
-    public LinkNode getSiguiente() {
+    public Nodo getSiguiente() {
         return this.siguiente;
     }
 
-    public boolean isEqual(int valor) {
+    public boolean valorIs(int valor) {
         return this.valor == valor;
     }
+
 
 }
