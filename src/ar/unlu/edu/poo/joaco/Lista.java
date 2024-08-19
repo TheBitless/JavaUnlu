@@ -66,7 +66,7 @@ public class Lista {
     public boolean buscar(int valor) {
         if (!this.estaVacia()) {
             Nodo nodoActual = this.inicio;
-            while (!nodoActual.valorIs(valor) && !nodoActual.hasSiguiente()) {
+            while (!nodoActual.valorIs(valor) && nodoActual.hasSiguiente()) {
                 nodoActual = nodoActual.getSiguiente();
             }
             if (nodoActual.valorIs(valor)){
@@ -120,16 +120,20 @@ public class Lista {
     }
 
 
-    public void mostrarLista(){
-
-        System.out.print("[ ");
+    public String toString(){
+        var resultado = "";
         Nodo nodoActual=this.inicio;
-        //System.out.print(nodoActual.getValor());
-        for (int i= 0; i < longitud();i++){
-            System.out.print(nodoActual.getValor());
-            nodoActual=nodoActual.getSiguiente();
+        for (int i= 0; i < this.cantidadElementos ; i++){
+            resultado += nodoActual.getValor();
+            if (nodoActual.hasSiguiente()){
+                resultado += ", ";
+            }
+            nodoActual = nodoActual.getSiguiente();
         }
-        System.out.println(" ]");
+        return resultado;
     }
 
+    public void mostrar(){
+        System.out.println(this);
+    }
 }
