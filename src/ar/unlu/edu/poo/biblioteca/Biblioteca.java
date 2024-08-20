@@ -27,16 +27,29 @@ public class Biblioteca {
 
 
 
-    public void altaLibro(String autor, String titulo,int pags,String isbn){
-        Autor autorAlta = Autor.buscarAutor(autores,autor);
-        if (autorAlta != null){
-            autorAlta.agregarLibro(titulo,pags,isbn);
-            }
-        else{
+    public void altaLibro(String autor, String titulo,int pags,String isbn) {
+        Autor autorAlta = Autor.buscarAutor(autores, autor);
+        if (autorAlta != null) {
+            autorAlta.agregarLibro(titulo, pags, isbn);
+        } else {
             System.out.println("Antes de dar de alta un libro debe dar de alta su autor.");
         }
+    }
 
-//    public void altaEjemplar(String titulo){
-//        agregarEjemplar
-//    }
+    public void altaEjemplar(String titulo){
+        Libro buscado = Autor.buscarLibro(autores,titulo);
+        if (buscado != null){
+            buscado.agregarEjemplar();
+        }
+        else{
+            System.out.println("Antes de dar de alta un ejemplar debe dar de alta su libro.");
+        }
+    }
+
+    public void cargarPrestamo(int idSocio,String titulo){
+        Libro libro = Autor.buscarLibro(autores,titulo);
+        if (libro.getDisponible()){
+
+        }
+    }
 }

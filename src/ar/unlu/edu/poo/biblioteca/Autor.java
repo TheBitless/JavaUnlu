@@ -23,6 +23,16 @@ public class Autor {
         return null;
     }
 
+    public static Libro buscarLibro(ArrayList<Autor> autores, String titulo) {
+        for (Autor autor : autores){
+            Libro libro = Libro.buscarLibro(autor.getLibros(),titulo);
+            if (libro != null){
+                return libro;
+            }
+        }
+        return null;
+    }
+
     public String getNombre() {
         return this.nombre;
     }
