@@ -9,8 +9,6 @@ public class Libro {
     private final String isbn;
     private final ArrayList<Ejemplar> ejemplares;
 
-    //chequear si faltaria agregar un array de ejemplares
-
     public Libro(String titulo, int paginas, String isbn) {
         this.titulo = titulo;
         this.paginas = paginas;
@@ -50,7 +48,24 @@ public class Libro {
     public Ejemplar getDisponible(){
         int contador = 0;
         for (Ejemplar ejemplar : ejemplares){
-            if ()
+            if (ejemplar.isDisponible()){
+                if (contador++ > 1){
+                    return ejemplar;
+                }
+            }
         }
+        return null;
+    }
+
+    public int ejemplaresDisponibles(){
+        int contador = 0;
+        for (Ejemplar ejemplar : ejemplares){
+            contador += ejemplar.isDisponible()? 1:0;
+        }
+        return contador;
+    }
+
+    public String mostrar(String autor) {
+        return "El libro " + this.titulo + " creado por el autor " + autor + " tiene " + this.paginas + " páginas, quedan " + this.ejemplaresDisponibles() + " disponibles y se prestaron " + (this.ejemplares.size() - this.ejemplaresDisponibles());
     }
 }

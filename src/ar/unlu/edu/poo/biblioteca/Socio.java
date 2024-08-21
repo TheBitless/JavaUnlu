@@ -33,4 +33,13 @@ public class Socio {
         }
         return null;
     }
+
+    public Prestamo buscarPrestamo(String titulo) {
+        for (Prestamo prestamo : prestamos){
+            if (titulo.equals(prestamo.getEjemplar().getLibro().getTitulo()) && prestamo.getFechaDevolucion() == null){
+                return prestamo;
+            }
+        }
+        return null;
+    }
 }

@@ -2,7 +2,7 @@ package ar.unlu.edu.poo.biblioteca;
 
 public class Ejemplar {
     private boolean disponible;
-    private int idPrestamo;
+    private Prestamo idPrestamo;
     private Libro libro;
 
     public Ejemplar(Libro libro) {
@@ -14,7 +14,7 @@ public class Ejemplar {
         return this.disponible;
     }
 
-    public int getIdPrestamo() {
+    public Prestamo getIdPrestamo() {
         return this.idPrestamo;
     }
 
@@ -22,7 +22,13 @@ public class Ejemplar {
         this.disponible = disponible;
     }
 
-    public void setIdPrestamo(int idPrestamo) {
+    public void setIdPrestamo(Prestamo idPrestamo) {
         this.idPrestamo = idPrestamo;
     }
+
+    public Libro getLibro() {
+        return this.libro;
+    }
+
+
 }
