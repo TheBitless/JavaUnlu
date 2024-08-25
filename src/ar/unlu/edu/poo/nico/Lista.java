@@ -1,6 +1,4 @@
-package ar.unlu.edu.poo.joaco;
-
-import java.util.Scanner;
+package ar.unlu.edu.poo.nico;
 
 public class Lista {
 

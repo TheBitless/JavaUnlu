@@ -1,4 +1,4 @@
-package ar.unlu.edu.poo.joaco;
+package ar.unlu.edu.poo.nico;
 
 public class Nodo {
 

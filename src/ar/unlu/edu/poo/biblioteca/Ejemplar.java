@@ -3,7 +3,7 @@ package ar.unlu.edu.poo.biblioteca;
 public class Ejemplar {
     private boolean disponible;
     private Prestamo idPrestamo;
-    private Libro libro;
+    private final Libro libro;
 
     public Ejemplar(Libro libro) {
         disponible = true;

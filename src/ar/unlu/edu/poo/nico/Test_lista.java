@@ -1,4 +1,4 @@
-package ar.unlu.edu.poo.joaco;
+package ar.unlu.edu.poo.nico;
 
 public class Test_lista {
     public static void main(String[] args) {
